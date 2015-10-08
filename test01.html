@@ -23,16 +23,19 @@
         $(function () {
             var music = document.getElementById("bgMusic");
             $("#audioBtn").click(function () {
-                if (music.paused) {
-                    music.play();
-
-                    $("#audioBtn").removeClass("pause").addClass("play");
-
-                } else {
-                    music.pause();
-
-                    $("#audioBtn").removeClass("play").addClass("pause");
-                }
+                console.info(1211)
+                music.load();
+                music.play();
+//                if (music.paused) {
+//                    music.play();
+//
+//                    $("#audioBtn").removeClass("pause").addClass("play");
+//
+//                } else {
+//                    music.pause();
+//
+//                    $("#audioBtn").removeClass("play").addClass("pause");
+//                }
             });
         })
 
@@ -42,7 +45,7 @@
 <body>
 <a class="mscBtn" id="audioBtn" style="cursor:pointer;">test</a>
 
-<audio id="bgMusic" src="http://cctv3.qiniudn.com/zuixingfuderen.mp3" loop="loop"></audio>
+<audio id="bgMusic" src="http://cctv3.qiniudn.com/zuixingfuderen.mp3"></audio>
 
 </body>
 </html>
