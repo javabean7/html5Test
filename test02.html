@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>图片按比例自适应缩放</title>
+    <style>
+        .cnt{text-align:center;width:1600px;height:1350px;margin:0 auto;border:1px solid #ddd;}
+    </style>
+</head>
+<body>
+<div class="cnt">
+    <img id="img" src="http://www.wallcoo.com/1920x1440/1920x1440_nature_wallpapers_02/wallpapers/1920x1440/%5Bwallcoo.com%5D_1920X1440_nature_wallpapers_aVistas005.jpg" alt="alipay" />
+    <br />
+    <a href="http://www.wallcoo.com/1920x1440/1920x1440_nature_wallpapers_02/wallpapers/1920x1440/%5Bwallcoo.com%5D_1920X1440_nature_wallpapers_aVistas005.jpg" rel="nofollow">查看原图</a> || <a href="http://sofish.de/1679" title="关于图片按比例自适应缩放">返回文章：关于图片按比例自适应缩放 »</a>
+</div>
+<script>
+    window.onload = function() {
+        var img = document.getElementById('img'),
+                /**
+                 * 图片按比例自适应缩放
+                 * @param img {Element} 用户上传的图片
+                 * @param maxWidth {Number} 预览区域的最大宽度
+                 * @param maxHeight {Number} 预览区域的最大高度
+                 */
+                resizeImg = function(img, maxWidth, maxHeight){
+                    var w = img.width,
+                            h = img.height;
+// 当图片比预览区域小时不做任何改变 
+                    if(w < maxWidth && h < maxHeight) return;
+// 当实际图片比例大于预览区域宽高比例时 
+// 缩放图片宽度，反之缩放图片宽度 
+                    w/h > maxWidth/maxHeight ? img.width = maxWidth : img.height = maxHeight;
+                };
+        resizeImg(img, 500, 300);
+    }
+</script>
+</body>
+</html> 

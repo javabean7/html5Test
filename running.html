@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>奔跑吧，宝贝</title>
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="css/running.css">
+	<link rel="stylesheet" type="text/css" href="css/pageA.css">
+
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/touch-0.2.14.min.js"></script>
+	<script type="text/javascript" src="js/jquery.transit.js"></script>
+	<script type="text/javascript" src="js/running.js"></script>
+	<script type="text/javascript" src="js/fastclick.js"></script>
+</head>
+<body>
+	<div id="content">
+		<ul class='content-wrap'>
+			 <!-- 第一关 -->
+			<li>
+				<!-- 背景图 -->
+				<div class="a-background">
+                   <div class="running-bg"></div>
+					<!--<img src="images/running_bg.jpg">-->
+                </div>
+                <!-- 其他动态元素 -->
+                <div class="cloud yun" id="yun"></div>
+                <div class="cloud yun1"></div>
+                <div class="cloud yun2"></div>
+                <div class="cloud yun3"></div>
+			</li>
+			<!-- 第二关 -->
+			<li></li>
+		</ul>
+		<!-- 跑道 -->
+		<div id="runway" class="runway">
+			<img src="images/running_way.png">
+		</div>
+
+		<!-- 人物1 -->
+		<div id="boyOne" class="charector boy-one" style="width:110px;height:110px;">
+			<!-- <div class="touxiang" style="width:20px;height:20px;"></div> -->
+		</div>
+		<!-- 人物2 -->
+		<div id="boyTwo" class="charectorTwo boy-two " style="width:110px;height:110px;">
+			<!-- <div class="touxiang" style="width:20px;height:20px;"></div> -->
+		</div>
+		<div id="boyThree" class="charectorThree boy-three " style="width:110px;height:110px;">
+			<!-- <div class="touxiang" style="width:20px;height:20px;"></div> -->
+		</div>
+		<!-- 操作区 -->
+		<div id="operation">
+			<div class="btn btn-left"><button id="btn-left"></button></div>
+			<div class="btn btn-right"><button id="btn-right"></button></div>
+		</div>
+		<!-- 倒计时 -->
+		<!--<div class="countdown" id="countDown">3</div>-->
+		<div class="countdown" id="countDown" style="background-image: url('images/3.png');"></div>
+		<!-- 跑步计时 -->
+		<div class="counttime" id="countTime">00:00</div>
+
+		<audio id="bgMusic" src="music/06.wav"></audio>
+		<audio id="bgMusicAuto" src="music/05.wav" autoplay="autoplay" loop="loop"></audio>
+	</div>
+	<div class="message">
+		<p>游戏规则：按左右交替规则,按下面的左右脚</p>
+		<button id="started">OK</button>
+	</div>
+	<script type="text/javascript">
+        $(function () {
+            var music = document.getElementById("bgMusic");
+//            $("#btn-left,#btn-right").click(function () {
+//            	music.load();
+//            	music.play();
+//            });
+			window.addEventListener('load', function() {
+				var testA, testB;
+				testA = document.getElementById('btn-left');
+				testB = document.getElementById('btn-right');
+				// Android 2.2 needs FastClick to be instantiated before the other listeners so that the stopImmediatePropagation hack can work.
+				testA.addEventListener('touchend', function(event) {
+//					console.info(1)
+//					music.pause();
+				}, false);
+				testA.addEventListener('click', function(event) {
+//					console.info(2)
+//					music.load();
+					music.play();
+				}, false);
+				testB.addEventListener('touchend', function(event) {
+//					console.info(3)
+//					music.pause();
+				}, false);
+				testB.addEventListener('click', function(event) {
+//					console.info(4)
+//					music.load();
+					music.play();
+				}, false);
+				FastClick.attach(testA);
+				FastClick.attach(testB);
+			}, false);
+        })
+
+    </script>
+</body>
+</html>

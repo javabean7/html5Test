@@ -1,0 +1,295 @@
+html,body,div,span,object,iframe,
+h1,h2,h3,h4,h5,h6,p,
+del,dfn,em,img,ins,kbd,q,samp,small,strong,b,i,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,
+article,aside,footer,header,nav,section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent
+}
+
+body {
+	-webkit-text-size-adjust: none;
+	font-family: sans-serif
+}
+
+h1 {
+	font-size: 33px;
+	margin: 50px 0 15px;
+	text-align: center;
+	color: #212121
+}
+
+h2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #3c3c3c;
+	margin: 20px 10px 10px
+}
+
+small {
+	margin: 0 10px 30px;
+	display: block;
+	font-size: 12px
+}
+
+a {
+	margin: 0 0 0 10px;
+	font-size: 12px;
+	color: #3c3c3c
+}
+
+img {
+	border: 0
+}
+
+ol,ul,li {
+	list-style-type: none
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	perspective: 1000;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: absolute
+}
+
+.content-wrap {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+
+.content-wrap>li {
+	width: 100%;
+	height: 100%;
+	float: left;
+	background-size: 100% 100%;
+	overflow: hidden;
+	position: relative
+}
+
+/*操作区*/
+#operation{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+.btn{
+	width: 50%;
+	height: 16%;
+	text-align: center;
+	display: inline-block;
+	background-color: rgba(0,0,0,0.3);
+	padding: 5% 0;
+}
+.btn-left{
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+
+}
+.btn-right{
+	position: absolute;
+	bottom: 10%;
+	right: 0;
+}
+.btn-left button,.btn-right button{
+	width: 50%;
+	height: 100%;
+	background: none;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* For some Androids */  
+}
+#btn-left{
+	background-image: url("../images/left_f.png");
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+
+}
+#btn-right{
+	background-image: url("../images/right_f.png");
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+/*倒计时*/
+/*.countdown{*/
+	/*position: absolute;*/
+	/*left: 50%;*/
+	/*top: 50%;*/
+	/*z-index: 2;*/
+	/*font-size: 36px;*/
+	/*color: blue;*/
+	/*font-weight: bold;*/
+/*}*/
+.countdown{
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	z-index: 2;
+	font-size: 36px;
+	color: blue;
+	font-weight: bold;
+	/*background-image: url("../images/3.png");*/
+	background-size: 100% 100%;
+	width: 20%;
+	height: 20%;
+}
+/*跑步计时*/
+.counttime{
+	position: absolute;
+	right: 40%;
+	top:8%;
+	z-index: 2;
+	font-size: 24px;
+	color: red;
+	font-weight: normal; 
+}
+/*跑的动画*/
+.charector{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-image: url(../images/p01.png);
+    background-size: 300% 300%;
+    -webkit-background-origin: 0 0;
+}
+.charectorTwo{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-image: url(../images/p03.png);
+	background-size: 300% 300%;
+	-webkit-background-origin: 0 0;
+}
+.charectorThree{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-image: url(../images/p04.png);
+	background-size: 300% 300%;
+	-webkit-background-origin: 0 0;
+}
+ .slowRunning{
+	
+    -webkit-animation-name: sprite_3;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-timing-function: step-start;
+    -webkit-animation-iteration-count: infinite;
+    
+ }
+
+.boy-one{
+	left: 30%;
+	top: 45%;
+}
+
+.boy-two{
+	left: 20%;
+	top: 32%;
+}
+.boy-three{
+	left: 40%;
+	top: 58%;
+}
+	@-webkit-keyframes sprite_3 {
+        
+        0% {
+            background-position: 0% 0%
+        }
+        12.5% {
+            background-position: 0% 0%
+        }
+        25% {
+            background-position: -100% 0%
+        }
+        37.5% {
+            background-position: -200% 0%
+        }
+        50% {
+            background-position: 0% -100%
+        }
+        62.5% {
+            background-position: -100% -100%
+        }
+        75% {
+            background-position: -200% -100%
+        }
+        87.5% {
+            background-position: 0% -200%
+        }
+        100% {
+            background-position: -100% -200%
+        }
+        
+    }
+
+    @-moz-keyframes sprite_3 {
+    	0% {
+            background-position: 0% 0%
+        }
+        12.5% {
+            background-position: 0% 0%
+        }
+        25% {
+            background-position: -100% 0%
+        }
+        37.5% {
+            background-position: -200% 0%
+        }
+        50% {
+            background-position: 0% -100%
+        }
+        62.5% {
+            background-position: -100% -100%
+        }
+        75% {
+            background-position: -200% -100%
+        }
+        87.5% {
+            background-position: 0% -200%
+        }
+        100% {
+            background-position: -100% -200%
+        }
+    }
+
+/*暂停动画*/
+.pauseFall{
+	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+.btn-left .active,.btn-right .active{
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 15px;
+}
+
+
+
+
+
+
+
+
